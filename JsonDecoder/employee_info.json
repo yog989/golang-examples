@@ -1,0 +1,17 @@
+[
+    {
+        "name": "First Last",
+        "location": "Pune",
+        "empId": 100
+    },
+    {
+        "name": "Mahesh Kagde",
+        "location": "Mumbai",
+        "empId": 101
+    },
+    {
+        "name": "Tushar Pathak",
+        "location": "Pune",
+        "empId": 102
+    }
+]
