@@ -1,0 +1,9 @@
+<html>
+    <h2>Update Company Information</h2>  
+    <form method="POST" action="insert">
+    <input type="hidden" name="uid" value="{{ .Id }}" />
+    <label> Name </label><input type="text" name="name" value="{{ .Name }}"  /><br />
+    <label> City </label><input type="text" name="city" value="{{ .City }}"  /><br />
+    <input type="submit" value="Save" />
+    </form><br />
+</html>
