@@ -1,5 +1,18 @@
-<html>
-    <h2> Company Information {{ .Id }} </h2>
-    <p>Name: {{ .Name }}</p>
-    <p>City:  {{ .City }}</p><br /> <a href="/edit?id={{ .Id }}">Edit</a></p>
-</html>
+{{ template "Header" }}
+{{ template "LeftNav" }}
+<div class="col-sm-8">
+    <div class="row">
+        <label for="nameControl" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            {{ .Name }}
+        </div>
+    </div>
+    <div class="row">
+        <label for="cityControl" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+            {{ .City }}
+        </div>
+    </div>
+</div>
+{{ template "RightNav"}}
+{{ template "Footer"}}

@@ -1,46 +1,31 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>Golang Mysql Curd Example</title>
-        <meta charset="UTF-8" />
-    </head>
-    <body>
-
-    <h2> Company Information List </h2>
-    <table border="1">
+{{ template "Header" }}
+{{ template "LeftNav" }}
+<div class="col-sm-8">
+  <div class="table-responsive">
+    <table class="table m-0">
       <thead>
-      <tr>
-        <td colspan="4">
-          <form method="POST" action="search">
-            <input type="text" name="name" />
-            <input type="submit" value="Search" />
-          </form>
-        </td>
-        <td><a href="/add">Add</a></td>
-        <td><a href="/export">Export</a></td>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>City</td>
-        <td>View</td>
-        <td>Edit</td>
-        <td>Delete</td>
-      </tr>
-       </thead>
-       <tbody>
-    {{ range . }}
-      <tr>
-        <td>{{ .Id }}</td>
-        <td> {{ .Name }} </td>
-        <td>{{ .City }} </td> 
-        <td><a href="/show?id={{ .Id }}">View</a></td>
-        <td><a href="/edit?id={{ .Id }}">Edit</a></td>
-        <td><a href="/delete?id={{ .Id }}">Delete</a></td>
-      </tr>
-    {{ end }}
-       </tbody>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>City</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range . }}
+        <tr>
+          <th scope="row">{{ .Id }}</th>
+          <td>{{ .Name }}</td>
+          <td>{{ .City }}</td>
+          <td><a href="/show?id={{ .Id }}" class="btn btn-primary btn-sm" role="button">View</a></td>
+          <td><a href="/edit?id={{ .Id }}" class="btn btn-primary btn-sm" role="button">Edit</a></td>
+          <td><a href="/delete?id={{ .Id }}" class="btn btn-danger btn-sm" role="button">Delete</a></td>
+        </tr>
+        {{ end }}
+      </tbody>
     </table>
-
-    </body>
-</html>
+  </div>
+</div>
+{{ template "RightNav"}}
+{{ template "Footer"}}
+      

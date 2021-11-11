@@ -1,8 +1,25 @@
-<html>
-    <h2>Add Company Information</h2>  
-    <form method="POST" action="insert">
-      <label> Company Name </label><input type="text" name="name" /><br />
-      <label> City </label><input type="text" name="city" /><br />
-      <input type="submit" value="Save" />
-    </form>
-</html>
+{{ template "Header" }}
+{{ template "LeftNav" }}
+<div class="col-sm-8">
+  <form class="form-inline" method="POST" action="insert">
+    <div class="row">
+      <label for="nameControl" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="nameControl" placeholder="Name" name="name" value="{{ .Name }}">
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <label for="cityControl" class="col-sm-2 col-form-label">City</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="cityControl" placeholder="City" name="city" value="{{ .City }}">
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <div class="input-group-btn sm-12">
+          <button type="submit" value="Save" class="btn btn-primary" style="margin-left: 115px;">Save</button>
+      </div>
+    </div>
+  </form> 
+</div>
+{{ template "RightNav"}}
+{{ template "Footer"}}

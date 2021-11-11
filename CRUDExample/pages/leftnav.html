@@ -1,0 +1,19 @@
+{{ define "LeftNav" }}
+<div class="col-sm-2 sidenav">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/add">Add</a></li>
+      <li><a href="/export">Export</a></li>
+    </ul><br>
+    <form method="POST" action="search">
+      <div class="input-group">
+        <input type="text" name="name" class="form-control" placeholder="Search">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
+{{ end }}
